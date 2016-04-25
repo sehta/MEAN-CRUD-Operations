@@ -1,7 +1,7 @@
-MEAN-Todo-App
+MEAN-Employee-App
 =============
 
-A Todo MEAN App - MongoDB, Expressjs, Angularjs and Nodejs
+An Employee MEAN App - MongoDB, Expressjs, Angularjs and Nodejs
 
 ### Install
 
