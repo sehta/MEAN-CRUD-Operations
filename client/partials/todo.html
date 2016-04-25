@@ -1,0 +1,59 @@
+<div class="container" ng-controller="TodoCtrl">
+    <div class="row col-md-12">
+                
+<form>
+        <div class="table-responsive">
+            <table class="table">
+        <tbody>
+            <tr>
+           <td> <input type="text" class="form-control input-lg" required placeholder="Name" ng-model="empName"></td>
+             <td> <input type="email" class="form-control input-lg" required placeholder="Email" ng-model="empEmail"></td>
+            <td> <input type="text" class="form-control input-lg" required placeholder="Department" ng-model="empDepartment"></td>
+            <td> 
+                <select style="width:100px;" class="form-control input-lg" data-ng-options="o for o in options" data-ng-model="empGender"></select>
+            </td>
+            <td> <input type="text" class="form-control input-lg" id="datepicker" required placeholder="MM/DD/YYYY" ng-model="empDOB"></td>
+            <td> <input type="text" style="width:60px;" class="form-control input-lg" disabled="disabled" placeholder="Age" ng-model="empAge"></td>
+            <td ng-show="!isEdit"> 
+                <button class="btn btn-success btn-md" ng-click="save()">Add Employee</button>
+                </td>
+                <td ng-show="isEdit"> 
+                <button class="btn btn-success btn-md" ng-click="update()">Update</button>
+                    
+                </td>
+                <td ng-show="isEdit"> <input type="button" class="btn btn-warning" value="Cancel" ng-click="cancel()" /> </td>
+               </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+    </div>
+    <div class="row col-md-12 todos">
+        <div class="alert alert-info text-center" ng-hide="employees.length > 0">
+            <h3>No Employees yet!</h3>
+        </div>
+        <div class="table-responsive">
+        <table id="list" class="table">
+        <tbody>
+            <tr ng-repeat="employee in employees" class="todo col-md-12 col-sm-12 col-xs-12">
+            
+                <td class="form-control input-lg">{{employee.name}}</td>
+                   <td class="form-control input-lg">{{employee.email}}</td>
+                   <td class="form-control input-lg">{{employee.department}}</td>
+                   <td class="form-control input-lg">{{employee.gender}}</td>
+                   <td class="form-control input-lg">{{employee.dob}}</td>
+               <td class="form-control input-lg">{{employee.age}}</td>
+
+          
+           <td>  <input type="button" class="btn btn-info" class="pull-right" value="Edit" ng-click="getEmp($event,$index)" /></td>
+              <td> <input type="button" class="btn btn-danger" class="pull-right" value="Delete" ng-click="delete($index)" /></td>
+               
+           
+
+        </tr>
+            </tbody>
+        </table>
+         </div>
+    </div>
+  </div>
+
