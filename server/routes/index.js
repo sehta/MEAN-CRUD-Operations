@@ -4,7 +4,8 @@
   var express = require('express');
   var router = express.Router();
   var mongojs = require('mongojs');
-  var db = mongojs('mongodb://localhost:27017/umesh', ['employees']);
+ // var db = mongojs('mongodb://localhost:27017/umesh', ['employees']);
+var db = mongojs('mongodb://umesh:umesh123@ds019491.mlab.com:19491/umesh', ['employees']);
 
   /* GET home page. */
   router.get('/', function(req, res) {
