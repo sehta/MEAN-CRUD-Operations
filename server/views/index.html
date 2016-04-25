@@ -23,12 +23,25 @@
     </style>
      <script>
   $(window).load(function(){
-    var datepicker=$("#datepicker").datepicker(
+      var st=setInterval(function(){
+          if($('#datepicker').hasClass('hasDatepicker'))
+              {
+                clearInterval(st);
+                  
+              }
+          else
+              {
+                  var datepicker=$("#datepicker").datepicker(
                     {changeMonth:true,changeYear:true,yearRange: "-50:+0",dateFormat:"mm/dd/yy"}
                                               );
     $("#datepicker").bind("keydown", function (event) {
        event.preventDefault();
-     });
+     });  
+                  
+              }
+          
+      },200);
+  
  });
  
   </script>
