@@ -1,9 +1,10 @@
-todoApp = angular.module('todoApp', ['ngRoute'])
+// Load Partial view and startup route
+employeeApp = angular.module('employeeApp', ['ngRoute'])
   .config(function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: '/partials/todo.html',
-        controller: 'TodoCtrl'
+        templateUrl: '/partials/employee.html',
+        controller: 'EmployeeCtrl'
       }).otherwise({
         redirectTo: '/'
       });

@@ -1,3 +1,4 @@
+// All routes and resposible to connectivity between Database and application
 (function() {
 
   'use strict';
@@ -12,12 +13,14 @@ var db = mongojs('mongodb://umesh:umesh123@ds019491.mlab.com:19491/umesh', ['emp
     res.render('index');
   });
 
+    // Get all Employee Records
   router.get('/api/employees', function(req, res) {
     db.employees.find(function(err, data) {
       res.json(data);
     });
   });
 
+    // Insert New Employee Record
   router.post('/api/employees', function(req, res) {
     db.employees.insert(req.body, function(err, data) {
       res.json(data);
@@ -25,8 +28,8 @@ var db = mongojs('mongodb://umesh:umesh123@ds019491.mlab.com:19491/umesh', ['emp
 
   });
 
+ // Update Existing Employee Record
   router.put('/api/employees', function(req, res) {
-
     db.employees.update({
       _id: mongojs.ObjectId(req.body._id)
     }, {
@@ -42,6 +45,7 @@ var db = mongojs('mongodb://umesh:umesh123@ds019491.mlab.com:19491/umesh', ['emp
 
   });
 
+    // Delete Employee Record
   router.delete('/api/employees/:_id', function(req, res) {
     db.employees.remove({
       _id: mongojs.ObjectId(req.params._id)

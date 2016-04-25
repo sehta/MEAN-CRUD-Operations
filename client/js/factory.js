@@ -1,4 +1,4 @@
-todoApp.factory('employeesFactory', function($http) {
+employeeApp.factory('employeesFactory', function($http) {
   var urlBase = '/api/employees';
   var _empService = {};
 

@@ -1,33 +1,33 @@
-<!DOCTYPE html>
-<html ng-app="todoApp">
+    <!DOCTYPE html>
+    <html ng-app="employeeApp">
 
-<head>
-  <title>Employee App</title>
-  <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/css/styles.css">
- <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <head>
+    <title>Employee App</title>
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <script type="text/javascript" src="/lib/angular/angular.min.js"></script>
-  <script type="text/javascript" src="/lib/angular-route/angular-route.min.js"></script>
-  <script type="text/javascript" src="/js/app.js"></script>
-  <script type="text/javascript" src="/js/factory.js"></script>
-  <script type="text/javascript" src="/js/controllers.js"></script>
+    <script type="text/javascript" src="/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/factory.js"></script>
+    <script type="text/javascript" src="/js/controllers.js"></script>
     <style type="text/css">
     #list tr td {
     border: medium none;
     box-shadow: none;
     float: left;
     width: 12%;
-}
+    }
     </style>
      <script>
-  $(window).load(function(){
+    $(window).load(function(){
       var st=setInterval(function(){
           if($('#datepicker').hasClass('hasDatepicker'))
               {
                 clearInterval(st);
-                  
+
               }
           else
               {
@@ -37,24 +37,24 @@
     $("#datepicker").bind("keydown", function (event) {
        event.preventDefault();
      });  
-                  
-              }
-          
-      },200);
-  
- });
- 
-  </script>
-</head>
 
-<body>
-  <div class="container">
+              }
+
+      },200);
+
+    });
+
+    </script>
+    </head>
+
+    <body>
+    <div class="container">
     <h1>Employee App</h1>
     <hr/>
     <ng-view></ng-view>
-  </div>
+    </div>
 
-  
-</body>
 
-</html>
+    </body>
+
+    </html>

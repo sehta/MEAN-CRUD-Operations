@@ -1,6 +1,5 @@
-todoApp.controller('TodoCtrl', function($rootScope, $scope, employeesFactory) {
-
-
+// Employee Controller(All Crud operations performed here)
+employeeApp.controller('EmployeeCtrl', function($rootScope, $scope, employeesFactory) {
   $scope.isEditable = [];
 $scope.options = ["Male","Female"];
 $scope.empGender = $scope.options[0];
@@ -12,7 +11,7 @@ $scope.editIndex=-1;
     $scope.employees = data.data;
   });
 
-  // Save a Todo to the server
+  // Save an employee to the server
   $scope.save = function($event) {
      
       if($scope.myform.$valid){
@@ -42,7 +41,7 @@ $scope.editIndex=-1;
   };
 
     
-      // Save a Todo to the server
+      // Get employees to the server
   $scope.getEmp = function($event, i) {
       $scope.isEdit=true;
        $scope.editIndex=i;
@@ -65,7 +64,7 @@ $scope.editIndex=-1;
 
  
 
-  // Update the edited Todo
+  // Update the edited employee
   $scope.update = function() {
    if($scope.myform.$valid){
       var _t = $scope.employees[$scope.editIndex];
@@ -105,7 +104,7 @@ $scope.editIndex=-1;
   }
   };
     
-    
+    // Cancel the edit mode
     $scope.cancel = function(i) {
         $scope.isEdit=false;
          $scope.empName = '';
@@ -116,7 +115,7 @@ $scope.editIndex=-1;
       $scope.empAge = '';
     };
 
-  // Delete a Todo
+  // Delete an employee
   $scope.delete = function(i) {
       $scope.isEdit=false;
     employeesFactory.deleteEmp($scope.employees[i]._id).then(function(data) {
