@@ -14,6 +14,8 @@ $scope.editIndex=-1;
 
   // Save a Todo to the server
   $scope.save = function($event) {
+     
+      if($scope.myform.$valid){
    var date = $scope.empDOB.split("/"); 
    var birthday = new Date(date[2],date[0]-1,date[1]);
    var ageDifMs = Date.now() - birthday.getTime();
@@ -36,7 +38,7 @@ $scope.editIndex=-1;
     $scope.isEdit=false;
       $scope.editIndex=-1;
       });
-     
+  }
   };
 
     
@@ -65,7 +67,7 @@ $scope.editIndex=-1;
 
   // Update the edited Todo
   $scope.update = function() {
-   
+   if($scope.myform.$valid){
       var _t = $scope.employees[$scope.editIndex];
         var date = $scope.empDOB.split("/"); 
    var birthday = new Date(date[2],date[0]-1,date[1]);
@@ -100,7 +102,7 @@ $scope.editIndex=-1;
           alert('Oops something went wrong!');
         }
       });
-    
+  }
   };
     
     
